@@ -1,0 +1,122 @@
+[
+    {
+        "title": "Grocery list for the week",
+        "category_id": 1,
+        "user_id": 1,
+        "description": "Milk, eggs, bread, spinach, chicken, rice, and olive oil. Don't forget the birthday candles for Saturday."
+    },
+    {
+        "title": "Laravel migration notes",
+        "category_id": 10,
+        "user_id": 1,
+        "description": "Remember to use foreignId()->constrained() for relationships instead of manually defining foreign keys."
+    },
+    {
+        "title": "Morning routine ideas",
+        "category_id": 7,
+        "user_id": 1,
+        "description": "Wake up at 6am, 10 minutes of stretching, journal for 5 minutes, then a light breakfast before starting work."
+    },
+    {
+        "title": "Client meeting follow-up",
+        "category_id": 11,
+        "user_id": 1,
+        "description": "Client wants the dashboard redesign completed by next Friday. Need to send a revised timeline by tomorrow."
+    },
+    {
+        "title": "Book recommendations",
+        "category_id": 4,
+        "user_id": 1,
+        "description": "Atomic Habits, Deep Work, and The Pragmatic Programmer were suggested by Ahmed during our call."
+    },
+    {
+        "title": "Budget for next month",
+        "category_id": 6,
+        "user_id": 1,
+        "description": "Rent 25000, groceries 10000, savings 15000, subscriptions 3000. Try to cut down on food delivery."
+    },
+    {
+        "title": "Trip to Skardu",
+        "category_id": 8,
+        "user_id": 1,
+        "description": "Plan for 5 days in July. Need to book hotel in advance and check weather conditions before packing."
+    },
+    {
+        "title": "React hooks quick notes",
+        "category_id": 3,
+        "user_id": 1,
+        "description": "useEffect runs after render, dependency array controls when it re-runs. Empty array means run once on mount."
+    },
+    {
+        "title": "Chicken karahi recipe",
+        "category_id": 9,
+        "user_id": 1,
+        "description": "1kg chicken, 4 tomatoes, ginger garlic paste, green chilies, and a pinch of garam masala at the end."
+    },
+    {
+        "title": "Task manager project plan",
+        "category_id": 10,
+        "user_id": 1,
+        "description": "Start with auth, then dashboard, then task CRUD. Add categories and profile pages after core features work."
+    },
+    {
+        "title": "Doctor appointment reminder",
+        "category_id": 12,
+        "user_id": 1,
+        "description": "Dental checkup scheduled for next Tuesday at 4pm. Bring the old prescription along."
+    },
+    {
+        "title": "Favorite quote today",
+        "category_id": 13,
+        "user_id": 1,
+        "description": "Discipline is choosing between what you want now and what you want most."
+    },
+    {
+        "title": "Yearly learning goals",
+        "category_id": 14,
+        "user_id": 1,
+        "description": "Finish Livewire, Sanctum, and Queues. Build 5 small projects and one portfolio-level project by December."
+    },
+    {
+        "title": "Random thought before sleep",
+        "category_id": 15,
+        "user_id": 1,
+        "description": "Should reorganize the folder structure of the notes app before adding the tagging feature."
+    },
+    {
+        "title": "Work standup summary",
+        "category_id": 2,
+        "user_id": 1,
+        "description": "Finished the login and signup pages. Blocked on email verification since SMTP config needs testing."
+    },
+    {
+        "title": "New investment idea",
+        "category_id": 6,
+        "user_id": 1,
+        "description": "Look into mutual funds vs fixed deposits. Ask a financial advisor before committing any amount."
+    },
+    {
+        "title": "Workout plan",
+        "category_id": 7,
+        "user_id": 1,
+        "description": "Monday chest and triceps, Wednesday back and biceps, Friday legs. 30 minutes cardio twice a week."
+    },
+    {
+        "title": "App feature brainstorm",
+        "category_id": 4,
+        "user_id": 1,
+        "description": "Add dark mode, note pinning, and a search bar with category filters for the notes dashboard."
+    },
+    {
+        "title": "Packing checklist",
+        "category_id": 8,
+        "user_id": 1,
+        "description": "Passport, charger, power bank, medicines, and a light jacket for the evenings."
+    },
+    {
+        "title": "PHP validation rules cheat sheet",
+        "category_id": 10,
+        "user_id": 1,
+        "description": "required, email, unique:table,column, confirmed, min:8 — combine with pipe symbol or array syntax."
+    }
+]

@@ -18,7 +18,7 @@
 <body>
     <div class="container-fluid">
         <div class="row overflow-hidden">
-            <div class="col-1 col-xl-2 overflow-hidden p-0 vh-100 sidebar-outer">         
+            <div class="col-1 col-xl-2 overflow-hidden p-0 sidebar-outer">         
                 <!-- ============ SIDEBAR ============ -->
                 <aside class="sidebar">
                     <div>

@@ -18,13 +18,14 @@ Route::get('reset', function () {
     return view('resetpassword');
 })->name('resetpassword');
 
+Route::get('otpform',function(){
+    return view('otpform');
+})->middleware('OtpRequest')->name('otpform');
+
 Route::get('changepassword', function () {
     return view('changepassword');
-})->name('changepassword');
+})->middleware('OtpVarified')->name('changepassword');
 
-Route::get('otpform', function () {
-    return view('otpform');
-})->name('otpform');
 
 Route::controller(CategoryController::class)->group(function(){
     Route::post('storecategory','storeCategory')->name('post.category');
@@ -61,7 +62,8 @@ Route::controller(UserController::class)->group(function(){
     Route::put('updateprofile/{id}','profileSetting')->name('profile.user');
 });
 
-
-Route::post('getotp',[ResetController::class,'getOtp'])->name('reset.password');
-Route::post('otpform',[ResetController::class,'verifyOTP'])->name('verify.otp');
-Route::post('change',[ResetController::class,'setnewpassword'])->name('change.password');
+Route::controller(ResetController::class)->group(function(){
+    Route::post('getotp','getOtp')->name('reset.password');
+    Route::post('otpform', 'verifyOTP')->name('verify.otp');
+    Route::post('change', 'setnewpassword')->name('change.password');
+});

@@ -1,0 +1,17 @@
+[
+    { "name": "Personal" },
+    { "name": "Work" },
+    { "name": "Study" },
+    { "name": "Ideas" },
+    { "name": "To-Do" },
+    { "name": "Finance" },
+    { "name": "Health" },
+    { "name": "Travel" },
+    { "name": "Recipes" },
+    { "name": "Projects" },
+    { "name": "Meetings" },
+    { "name": "Reminders" },
+    { "name": "Quotes" },
+    { "name": "Goals" },
+    { "name": "Journal" }
+]

@@ -2027,15 +2027,15 @@ color: #9296a3;
   .otp-input {
     width: 100%;
     height: 60px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 15px;
     color: var(--text-dark);
     background: var(--otp-bg);
     border: 1px solid var(--otp-border);
     border-radius: 10px;
     outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    padding:0 1rem;
+    transition: border-color 0.15s ease, 
+    box-shadow 0.15s ease;
   }
 
   .otp-input:focus {

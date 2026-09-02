@@ -7,12 +7,14 @@ use App\Http\Requests\ResetRequest;
 use App\Http\Requests\OtpRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+// use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\NewPasswordRequest;
 use App\Mail\OtpMail;
 
 class ResetController extends Controller
 {
+   
     public function getOtp(ResetRequest $request){
 
         $userId = DB::table('users')->where('email',$request->email)->first();
@@ -22,10 +24,10 @@ class ResetController extends Controller
                 'email'=>'Account not found'
             ])->onlyInput('email');
         }
-        
         session([
-            'email'=>$request->email
+            'email'=>$request->email,
         ]);
+
         $Otp = DB::table('otps')->where('user_id',$userId->id)->first();
         $otp_password = random_int(100000, 999999);
 
@@ -64,13 +66,12 @@ class ResetController extends Controller
                 return back()->withErrors([
                     'email'=>"Something wen't wrong"
                 ])->onlyInput('email');
-            }
+            };
             return redirect()->route('otpform');
         }
 
 
     }
-
 
     public function verifyOTP(OtpRequest $request){
         $otp = DB::table('otps')->where('user_id',session('user_id'))->first();
@@ -78,7 +79,7 @@ class ResetController extends Controller
         if(now()->greaterThan($otp->expires_at)){
             DB::table('otps')->where('user_id', session('user_id'))->update([
                 'otp'=>null,
-                'expires_at'=>null
+                'expires_at'=>false
             ]);
             // session()->forget('user_id');
 
@@ -89,6 +90,9 @@ class ResetController extends Controller
 
         $hashed_otp = Hash::check($request->otp, $otp->otp);
         if($hashed_otp){
+            session([
+                'otp_varified'=>true
+            ]);
             return redirect()->route('changepassword');
         }else{
             return back()->withErrors([
@@ -102,13 +106,16 @@ class ResetController extends Controller
             return redirect()->route('resetpassword')->withErrors([
                 'email' => 'Session expired. Please request a new OTP.'
             ]);
-        }
-        $password = DB::table('users')->where('id',session('user_id'))->update([
-            'password'=>Hash::make($request->password),
-        ]);
-
-        if($password){
-            return redirect()->route('login');
+        }else{
+            $password = DB::table('users')->where('id',session('user_id'))->update([
+                'password'=>Hash::make($request->password),
+            ]);
+    
+            if($password){
+                session()->forget('otp_varified');
+                session()->forget('user_id');
+                return redirect()->route('login');
+            }
         }
     }
 }

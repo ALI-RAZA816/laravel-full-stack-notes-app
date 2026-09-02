@@ -17,7 +17,7 @@
           <div class="card-custom">
             <h1 class="card-title-custom">Verify your email</h1>
             <p class="card-subtitle-custom">
-              We've sent a 6-digit code to your email address.<br>
+              We've sent a 6-digit code to your <b>{{session('email')}}</b> email address.<br>
               Please enter it below to continue.
             </p>
         
