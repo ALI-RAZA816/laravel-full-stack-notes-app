@@ -41,7 +41,7 @@
                         <label for="email" class="form-label">Email Address</label>
                         <div class="input-icon-group">
                             <i class="bi bi-envelope"></i>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="name@company.com">
+                            <input type="email" class="form-control" value="alirazamujahid102@gmail.com" name="email" id="email" placeholder="name@company.com">
                             @error('email')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -57,7 +57,7 @@
                         </div>
                         <div class="input-icon-group">
                             <i class="bi bi-lock"></i>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="••••••••">
+                            <input type="password" class="form-control" name="password" value="admin123" id="password" placeholder="••••••••">
                             @error('password')
                                 <span class="text-danger">{{$message}}</span>
                             @enderror

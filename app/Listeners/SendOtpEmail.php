@@ -9,7 +9,7 @@ use App\Events\OtpRequest;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OtpMail;
 
-class SendOtpEmail
+class SendOtpEmail implements ShouldQueue
 {
     /**
      * Create the event listener.

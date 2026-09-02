@@ -134,8 +134,8 @@ class UserController extends Controller
                 'status'=>'inactive'
             ]);
             Auth::logout();
-            return redirect()->route('login');
         }
+        return redirect()->route('login');
     }
 
 
