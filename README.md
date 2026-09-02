@@ -12,7 +12,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white" alt="PHP">
   <img src="https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white" alt="Laravel">
-  <img src="https://img.shields.io/badge/BootStrap-4-06B6D4?logo=bootstrap&logoColor=white" alt="BootStrap">
+  <img src="https://img.shields.io/badge/BootStrap-5-06B6D4?logo=bootstrap&logoColor=white" alt="BootStrap">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
 </p>
 
@@ -38,7 +38,8 @@ password reset flow and an admin panel for managing users and categories.
 - 👤 **User Profile & Settings** — update profile information and account settings
 - 🛡️ **Role-Based Access Control** — separate permissions for `admin` and `viewer` roles using Laravel Gates
 - 👥 **Admin User Management** — admins can view, search, and remove users
-- 🎨 **Responsive UI** — built with Blade templates and TailwindCSS
+- 🎨 **Responsive UI** — built with Blade templates and BootStrap
+
 
 ---
 
@@ -49,9 +50,8 @@ password reset flow and an admin panel for managing users and categories.
 | Backend           | Laravel 13 (PHP 8.3)                |
 | Frontend          | Blade Templates, TailwindCSS 4      |
 | Build Tool        | Vite                                 |
-| Database          | SQLite (default) / MySQL compatible |
+| Database          | MySQL 
 | Authentication    | Laravel Auth + Custom OTP Middleware |
-| Testing           | Pest PHP                             |
 
 ---
 
@@ -67,10 +67,6 @@ password reset flow and an admin panel for managing users and categories.
 | Dashboard | Add / Edit Note |
 |:---:|:---:|
 | ![Dashboard](docs/screenshots/dashboard.png) | ![Add Note](docs/screenshots/addnote.png) |
-
-| Single Note View | Favorites |
-|:---:|:---:|
-| ![Single Note](docs/screenshots/single-note.png) | ![Favorites](docs/screenshots/favorites.png) |
 
 | Category Management | Settings |
 |:---:|:---:|
