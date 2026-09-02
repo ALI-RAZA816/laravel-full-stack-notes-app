@@ -1,58 +1,217 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
 </p>
 
-## About Laravel
+<h1 align="center">NotesHub — Laravel Full Stack Notes App</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+  A full stack notes management application built with Laravel, featuring authentication,
+  OTP-based password recovery, role-based access control, categories, favorites and search.
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white" alt="Laravel">
+  <img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?logo=tailwindcss&logoColor=white" alt="TailwindCSS">
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 📖 About the Project
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**NotesHub** is a full stack notes-taking web application built on the Laravel framework. It allows
+registered users to create, organize, and manage personal notes under different categories, mark
+notes as favorites, and search through them. The application also includes a secure OTP-based
+password reset flow and an admin panel for managing users and categories.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## ✨ Features
 
-## Agentic Development
+- 🔐 **Authentication** — user registration and login system
+- 📧 **OTP-based Password Recovery** — forgot password → OTP sent via email → OTP verification → set new password
+- 📝 **Notes Management (CRUD)** — create, edit, view, and delete notes
+- ⭐ **Favorites** — mark/unmark notes as favorite for quick access
+- 🔍 **Search** — search notes by title/content
+- 🗂️ **Category Management** — organize notes into categories (create, edit, delete)
+- 👤 **User Profile & Settings** — update profile information and account settings
+- 🛡️ **Role-Based Access Control** — separate permissions for `admin` and `viewer` roles using Laravel Gates
+- 👥 **Admin User Management** — admins can view, search, and remove users
+- 🎨 **Responsive UI** — built with Blade templates and TailwindCSS
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+---
 
-```bash
-composer require laravel/boost --dev
+## 🛠️ Tech Stack
 
-php artisan boost:install
+| Layer            | Technology                          |
+|-------------------|--------------------------------------|
+| Backend           | Laravel 13 (PHP 8.3)                |
+| Frontend          | Blade Templates, TailwindCSS 4      |
+| Build Tool        | Vite                                 |
+| Database          | SQLite (default) / MySQL compatible |
+| Authentication    | Laravel Auth + Custom OTP Middleware |
+| Testing           | Pest PHP                             |
+
+---
+
+## 📸 Screenshots
+
+> Add your project screenshots to the `docs/screenshots/` folder using the file names below,
+> and they will automatically show up here on GitHub.
+
+| Login Page | Register Page |
+|:---:|:---:|
+| ![Login](docs/screenshots/login.png) | ![Register](docs/screenshots/register.png) |
+
+| Dashboard | Add / Edit Note |
+|:---:|:---:|
+| ![Dashboard](docs/screenshots/dashboard.png) | ![Add Note](docs/screenshots/addnote.png) |
+
+| Single Note View | Favorites |
+|:---:|:---:|
+| ![Single Note](docs/screenshots/single-note.png) | ![Favorites](docs/screenshots/favorites.png) |
+
+| Category Management | Settings |
+|:---:|:---:|
+| ![Categories](docs/screenshots/categories.png) | ![Settings](docs/screenshots/settings.png) |
+
+| User Profile | Admin - Users |
+|:---:|:---:|
+| ![Profile](docs/screenshots/profile.png) | ![Users](docs/screenshots/users.png) |
+
+| Forgot Password (OTP) | Reset Password |
+|:---:|:---:|
+| ![OTP](docs/screenshots/otp.png) | ![Reset Password](docs/screenshots/reset-password.png) |
+
+---
+
+## 📂 Project Structure (key folders)
+
+```
+laravel-full-stack-notes-app/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/       # NoteController, UserController, CategoryController, ResetController
+│   │   └── Middleware/        # EnsureOtpRequest, OtpVarified
+│   ├── Models/                 # User, Note, Category
+│   └── Providers/               # AppServiceProvider (role/permission Gates)
+├── database/
+│   └── migrations/             # users, categories, notes, otps
+├── resources/
+│   └── views/                  # Blade templates (login, register, dashboard, notes, etc.)
+├── routes/
+│   └── web.php                 # All application routes
+└── docs/
+    └── screenshots/             # Project screenshots (see above)
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## ⚙️ Database Schema (overview)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Table        | Key Fields                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| `users`      | name, email, password, role (`admin`/`viewer`), status, profile, phone     |
+| `categories` | title                                                                        |
+| `notes`      | title, content, category_id, user_id, favourate                            |
+| `otps`       | user_id, otp, expires_at                                                    |
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🔑 Roles & Permissions
 
-## Security Vulnerabilities
+The app uses Laravel **Gates** for authorization:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- `islogin` — user must be authenticated
+- `isAdmin` — user role must be `admin` (required for category management & user management)
+- `isNotes` — user can only access their own notes/profile
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🚀 Getting Started
+
+### Prerequisites
+
+- PHP >= 8.3
+- Composer
+- Node.js & npm
+- SQLite (or MySQL, if you switch the DB driver)
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/<your-username>/laravel-full-stack-notes-app.git
+cd laravel-full-stack-notes-app
+
+# 2. Install PHP dependencies
+composer install
+
+# 3. Install JS dependencies
+npm install
+
+# 4. Copy the environment file
+cp .env.example .env
+
+# 5. Generate the application key
+php artisan key:generate
+
+# 6. Configure your database in the .env file
+#    (default is SQLite — create the file if needed)
+touch database/database.sqlite
+
+# 7. Run migrations
+php artisan migrate
+
+# 8. Build frontend assets
+npm run build
+```
+
+### Running the App
+
+```bash
+# Start the Laravel dev server, queue listener, and Vite together
+composer run dev
+```
+
+The app will be available at **http://localhost:8000**.
+
+---
+
+## 📧 Mail Configuration (for OTP)
+
+The forgot-password flow sends an OTP via email. Update the following in your `.env` file with
+real mail credentials (e.g. Mailtrap, Gmail SMTP) for OTP emails to be delivered:
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=your-smtp-host
+MAIL_PORT=587
+MAIL_USERNAME=your-username
+MAIL_PASSWORD=your-password
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+---
+
+## 🧪 Running Tests
+
+```bash
+composer test
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome. Please fork the repository, create a feature branch, and submit a
+pull request describing your changes.
+
+---
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
