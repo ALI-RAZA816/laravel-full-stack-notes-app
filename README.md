@@ -12,8 +12,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white" alt="PHP">
   <img src="https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white" alt="Laravel">
-  <img src="https://img.shields.io/badge/TailwindCSS-4-06B6D4?logo=tailwindcss&logoColor=white" alt="TailwindCSS">
-  <img src="https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/BootStrap-4-06B6D4?logo=bootstrap&logoColor=white" alt="BootStrap">
   <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
 </p>
 
