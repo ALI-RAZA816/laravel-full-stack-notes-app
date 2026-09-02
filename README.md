@@ -62,7 +62,7 @@ password reset flow and an admin panel for managing users and categories.
 
 | Login Page | Register Page |
 |:---:|:---:|
-| ![Login](docs/screenshots/login.png) | ![Register](docs/screenshots/register.png) |
+| ![Login](https://raw.githubusercontent.com/ALI-RAZA816/laravel-full-stack-notes-app/cd889866bd68ef56dc3e6f4dd040fcea1d176a0a/login-screehshot.PNG) | ![Register](docs/screenshots/register.png) |
 
 | Dashboard | Add / Edit Note |
 |:---:|:---:|
