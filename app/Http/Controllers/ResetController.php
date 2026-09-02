@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ResetRequest;
 use App\Http\Requests\OtpRequest;
+use App\Events\OtpRequested;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\NewPasswordRequest;
-use App\Mail\OtpMail;
+// use App\Mail\OtpMail;
 
 class ResetController extends Controller
 {
@@ -40,14 +41,15 @@ class ResetController extends Controller
                     'updated_at'=>now(),
                     'expires_at'=>now()->addMinutes(2)
                 ]);
-                try{
+                // try{
                     session(['user_id'=>$userId->id]);
-                    Mail::to($userId->email)->send(new OtpMail($otp_password));
-                }catch(\Exception $e){
-                    return back()->withErrors([
-                        'email'=>"Something wen't wrong"
-                    ])->onlyInput('email');
-                }
+                //     Mail::to($userId->email)->send(new OtpMail($otp_password));
+                // }catch(\Exception $e){
+                //     return back()->withErrors([
+                //         'email'=>"Something wen't wrong"
+                //     ])->onlyInput('email');
+                // }
+                OtpRequested::dispatch($userId->email, $otp_password);
                 return redirect()->route('otpform');
             }
         }else{
@@ -58,15 +60,16 @@ class ResetController extends Controller
                 'updated_at'=>now(),
                 'expires_at'=>now()->addMinutes(2)
             ]);
-            try{
+            // try{
                 session(['user_id'=>$userId->id]);
-                Mail::to($userId->email)->send(new OtpMail($otp_password));
+            //     Mail::to($userId->email)->send(new OtpMail($otp_password));
 
-            }catch(\Exception $e){
-                return back()->withErrors([
-                    'email'=>"Something wen't wrong"
-                ])->onlyInput('email');
-            };
+            // }catch(\Exception $e){
+            //     return back()->withErrors([
+            //         'email'=>"Something wen't wrong"
+            //     ])->onlyInput('email');
+            // };
+            OtpRequested::dispatch($userId->email, $otp_password);
             return redirect()->route('otpform');
         }
 
