@@ -62,23 +62,23 @@ password reset flow and an admin panel for managing users and categories.
 
 | Login Page | Register Page |
 |:---:|:---:|
-| ![Login](https://raw.githubusercontent.com/ALI-RAZA816/laravel-full-stack-notes-app/cd889866bd68ef56dc3e6f4dd040fcea1d176a0a/login-screehshot.PNG) | ![Register](docs/screenshots/register.png) |
+| ![Login](https://raw.githubusercontent.com/ALI-RAZA816/laravel-full-stack-notes-app/cd889866bd68ef56dc3e6f4dd040fcea1d176a0a/login-screehshot.PNG) | ![Register](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/register-screenshot.PNG) |
 
 | Dashboard | Add / Edit Note |
 |:---:|:---:|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Add Note](docs/screenshots/addnote.png) |
+| ![Dashboard](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/dashboard-screenshot.PNG) | ![Add Note](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/add-note-screenshot.PNG) |
 
 | Category Management | Settings |
 |:---:|:---:|
-| ![Categories](docs/screenshots/categories.png) | ![Settings](docs/screenshots/settings.png) |
+| ![Categories](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/category-screenshot.PNG) | ![Settings](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/setting-screenshot.PNG) |
 
 | User Profile | Admin - Users |
 |:---:|:---:|
-| ![Profile](docs/screenshots/profile.png) | ![Users](docs/screenshots/users.png) |
+| ![Profile](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/profile-screenshot.PNG) | ![Users](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/users-screenshot.PNG) |
 
 | Forgot Password (OTP) | Reset Password |
 |:---:|:---:|
-| ![OTP](docs/screenshots/otp.png) | ![Reset Password](docs/screenshots/reset-password.png) |
+| ![Reset Password](https://github.com/ALI-RAZA816/laravel-full-stack-notes-app/blob/b7286d923d5ca9ade0aadcb99378fb573832d535/otp-screenshot.PNG)
 
 ---
 

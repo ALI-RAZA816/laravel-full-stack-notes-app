@@ -1,7 +1,7 @@
 
 @extends('layout.layout')
 @section('contents')
-    <h1 class="page-title">Edit Profile</h1>
+    <h1 class="page-title">Setting</h1>
     <p class="page-subtitle">Manage your public information and how others see you on NotesHub.</p>
 
     <div class="profile-card">
