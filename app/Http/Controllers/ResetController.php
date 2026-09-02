@@ -16,19 +16,17 @@ class ResetController extends Controller
     public function getOtp(ResetRequest $request){
 
         $userId = DB::table('users')->where('email',$request->email)->first();
-        session([
-            'email'=>$userId->email
-        ]);
         
         if(!$userId){
             return back()->withErrors([
                 'email'=>'Account not found'
             ])->onlyInput('email');
         }
-
+        
+        session([
+            'email'=>$request->email
+        ]);
         $Otp = DB::table('otps')->where('user_id',$userId->id)->first();
-        
-        
         $otp_password = random_int(100000, 999999);
 
         if($Otp){
