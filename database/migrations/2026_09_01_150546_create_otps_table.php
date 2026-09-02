@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('user_id');
             $table->string('otp')->nullable();
+            $table->string('expires_at')->nullable();
             $table->timestamps();
         });
     }

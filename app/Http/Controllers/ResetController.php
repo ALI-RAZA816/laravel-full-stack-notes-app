@@ -14,8 +14,12 @@ use App\Mail\OtpMail;
 class ResetController extends Controller
 {
     public function getOtp(ResetRequest $request){
-        $userId = DB::table('users')->where('email',$request->email)->first();
 
+        $userId = DB::table('users')->where('email',$request->email)->first();
+        session([
+            'email'=>$userId->email
+        ]);
+        
         if(!$userId){
             return back()->withErrors([
                 'email'=>'Account not found'
@@ -23,9 +27,10 @@ class ResetController extends Controller
         }
 
         $Otp = DB::table('otps')->where('user_id',$userId->id)->first();
-
-
+        
+        
         $otp_password = random_int(100000, 999999);
+
         if($Otp){
             if($userId->id == $Otp->user_id){
                 DB::table('otps')->where('user_id',$userId->id)->update([
@@ -33,6 +38,7 @@ class ResetController extends Controller
                     'otp'=>Hash::make($otp_password),
                     'created_at'=>now(),
                     'updated_at'=>now(),
+                    'expires_at'=>now()->addMinutes(2)
                 ]);
                 try{
                     session(['user_id'=>$userId->id]);
@@ -50,6 +56,7 @@ class ResetController extends Controller
                 'otp'=>Hash::make($otp_password),
                 'created_at'=>now(),
                 'updated_at'=>now(),
+                'expires_at'=>now()->addMinutes(2)
             ]);
             try{
                 session(['user_id'=>$userId->id]);
@@ -63,13 +70,26 @@ class ResetController extends Controller
             return redirect()->route('otpform');
         }
 
+
     }
 
 
     public function verifyOTP(OtpRequest $request){
         $otp = DB::table('otps')->where('user_id',session('user_id'))->first();
-        $hashed_otp = Hash::check($request->otp, $otp->otp);
+        
+        if(now()->greaterThan($otp->expires_at)){
+            DB::table('otps')->where('user_id', session('user_id'))->update([
+                'otp'=>null,
+                'expires_at'=>null
+            ]);
+            // session()->forget('user_id');
 
+            return back()->withErrors([
+                'otp'=>'OTP has expired'
+            ]);
+        }
+
+        $hashed_otp = Hash::check($request->otp, $otp->otp);
         if($hashed_otp){
             return redirect()->route('changepassword');
         }else{

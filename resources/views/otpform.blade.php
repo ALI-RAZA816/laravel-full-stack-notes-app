@@ -32,8 +32,19 @@
         
               <button type="submit" class="btn-verify">Verify Code</button>
             </form>
-        
-            <p class="resend-text">Didn't receive the code? <a href="#">Resend</a></p>
+            
+            <div class="resend-text">
+              <span>Didn't receive the code?</span>
+
+              <form action="{{ route('reset.password') }}" method="POST" style="display:inline;">
+                  @csrf
+                  <input type="email" name="email" value="{{session('email')}}" hidden>
+                  <button type="submit" class="btn btn-link">
+                      Resend
+                  </button>
+              </form>
+            </div>
+            
         
             <a href="{{route('login')}}" class="back-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
