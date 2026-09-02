@@ -24,7 +24,7 @@
     </form>
 
     <!-- Category list -->
-    <div class="category-list">
+    <div class="category-list" style="max-height: 500px;overflow-y:auto;">
         @foreach ($categories as $category )
             <div class="category-list-item justify-content-between">
                 <span class="category-name">{{$category->title}}</span>

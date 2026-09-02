@@ -17,10 +17,10 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row overflow-hidden">
-            <div class="col-1 col-xl-2 overflow-hidden p-0 sidebar-outer">         
+        <div class="row">
+            <div class="col-1 col-xl-2 p-0 ">         
                 <!-- ============ SIDEBAR ============ -->
-                <aside class="sidebar">
+                <aside class="sidebar sidebar-outer">
                     <div>
                         <div class=" text-center mt-3 mt-xl-0 mb-3">
                             <img src="{{asset('logo.png')}}" class="img-fluid logo-image" alt="">
@@ -41,7 +41,7 @@
                     </div>
                 </aside>
             </div>
-            <div class="col-11 overflow-hidden col-xl-10 p-0">
+            <div class="col-11 col-xl-10 p-0">
                 <!-- ============ TOP NAVBAR ============ -->
                 <div class="topnav">
                     <div class="logo">NotesHub</div>
